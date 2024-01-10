@@ -1,4 +1,5 @@
 fun main() {
+    startOfProgramMessage()
     //demanar litres consumits i validar
     var fixedImport=6
     val litersWater=readFloat("Introdueixi els litres consumits:", 0.0f)
@@ -21,5 +22,5 @@ fun main() {
 
     val finalDiscount= calculateFinalDiscount(basePrice,numerousFamilyDiscount,socialBonusDiscount)
     printFinalBill(litersWater,basePrice,finalDiscount,socialDiscountIsBigger,fixedImport)
-
+    endOfProgramMessage()
 }

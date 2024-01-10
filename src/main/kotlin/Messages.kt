@@ -1,7 +1,12 @@
+/**
+ *This function prints welcome message at the start of every iteration of program with blue bold color
+ * @author Thalia2603, annacano0
+ * @since 04/01/2024
+ */
 fun startOfProgramMessage(){
-    println(BLUE_BRIGHT+"----------------------------")
-    println("        Benvolgut/da        ")
-    println("----------------------------"+RESET)
+    println(BLUE_BRIGHT+"--------------------------------")
+    println("          Benvolgut/da          ")
+    println("--------------------------------"+RESET)
 }
 
 /**
@@ -10,7 +15,7 @@ fun startOfProgramMessage(){
  * @since 04/01/2024
  */
 fun endOfProgramMessage(){
-    println(BLUE_BOLD_BRIGHT+"         Bon Viatge!        "+RESET)
+    println(BLUE_BOLD_BRIGHT+"                 Adeu!          "+RESET)
 }
 
 /**
@@ -35,3 +40,4 @@ fun messageErrorRange(){
 fun separador(){
     println("-------------------------------------")
 }
+
