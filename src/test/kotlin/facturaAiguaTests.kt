@@ -22,9 +22,36 @@ class testFunctionsFactura() {
 
     @Test
     fun checkCalculateDiscountNumerousFamily(){
-        ///TODO:acabar de corregir tests
-        //assertTrue(calculateDiscountNumerousFamily() is Int)
+        assertTrue(calculateDiscountNumerousFamily(10) is Int)
+
         var expected=50
-        //assertEquals(expected, calculateBasePrice())
+        assertEquals(expected, calculateDiscountNumerousFamily(10))
+
+        expected=20
+        assertEquals(expected, calculateDiscountNumerousFamily(2))
+
+        expected=0
+        assertEquals(expected, calculateDiscountNumerousFamily(1))
+    }
+
+    @Test
+    fun checkCalculateFinalDiscount(){
+        var expected=12f
+        var basePrice=15f
+        var numerousFamily=20
+        var socialDiscount=80
+        assertEquals(expected, calculateFinalDiscount(basePrice,numerousFamily,socialDiscount))
+
+        expected=0f
+        basePrice=0f
+        numerousFamily=0
+        socialDiscount=0
+        assertEquals(expected, calculateFinalDiscount(basePrice,numerousFamily,socialDiscount))
+
+        expected=25f
+        basePrice=100f
+        numerousFamily=25
+        socialDiscount=0
+        assertEquals(expected, calculateFinalDiscount(basePrice,numerousFamily,socialDiscount))
     }
 }

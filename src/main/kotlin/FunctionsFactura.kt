@@ -7,11 +7,10 @@ fun calculateBasePrice(liters:Float):Float{
     return basePrice
 }
 
-fun calculateDiscountNumerousFamily():Int{
-    ///TODO: hacer que la interaccion con el ususario sea en el main, o en otra funcion. Es importante pasar el valor de num personas por paramnetro!!!
-    val numPeople=readIntRange("Introdueixi el num de persones de la llar", 2, 25)
+fun calculateDiscountNumerousFamily(numPeople:Int):Int{
     var descompte=0
     if (numPeople>6) descompte=50
+    else if (numPeople<2) descompte=0
     else descompte = numPeople*10
     return descompte
 }
@@ -22,7 +21,7 @@ fun calculateFinalDiscount(basePrice:Float,numerousFamily:Int, socialBonus:Int):
     val finalDiscount=(discount*basePrice)/100
     return finalDiscount
 }
-fun printFinalBill(liters:Float,base:Float,discount:Float,socialDiscount:Boolean, fixedImport:Int){
+fun printFinalBill(liters:Float,base:Float,discount:Float, fixedImport:Int){
     separador()
     println("         FACTURA DE L'AIGUA          ")
     separador()
@@ -30,7 +29,7 @@ fun printFinalBill(liters:Float,base:Float,discount:Float,socialDiscount:Boolean
     println("Preu base......................"+base.toDouble().round(2)+" €")
     separador()
 
-    if (socialDiscount)println("Descompte social................"+discount.toDouble().round(2)+" €")
+    if (fixedImport==3)println("Descompte social................"+discount.toDouble().round(2)+" €")
     else println("Descompte mp/num................"+discount.toDouble().round(2)+" €")
 
     println("Quota manteniment................."+fixedImport.toDouble().round(2)+" €\n")
