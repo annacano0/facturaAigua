@@ -4,7 +4,7 @@ fun calculateBasePrice(liters:Float):Float{
     if (liters>=50&&liters<=200)pricePerLiter=0.15f
     else if (liters>200) pricePerLiter=0.30f
     basePrice=liters*pricePerLiter
-    return basePrice.toDouble().round(2)
+    return basePrice
 }
 
 fun calculateDiscountNumerousFamily():Int{
@@ -19,23 +19,23 @@ fun calculateFinalDiscount(basePrice:Float,numerousFamily:Int, socialBonus:Int):
     if (numerousFamily>socialBonus)discount=numerousFamily
     else discount=socialBonus
     val finalDiscount=(discount*basePrice)/100
-    return finalDiscount.toDouble().round(2)
+    return finalDiscount
 }
 fun printFinalBill(liters:Float,base:Float,discount:Float,socialDiscount:Boolean, fixedImport:Int){
     separador()
     println("         FACTURA DE L'AIGUA          ")
     separador()
     println("\nConsum..................."+liters+" litres")
-    println("Preu base......................"+base+" €")
+    println("Preu base......................"+base.toDouble().round(2)+" €")
     separador()
 
-    if (socialDiscount)println("Descompte social................"+discount+" €")
-    else println("Descompte mp/num................"+discount+" €")
+    if (socialDiscount)println("Descompte social................"+discount.toDouble().round(2)+" €")
+    else println("Descompte mp/num................"+discount.toDouble().round(2)+" €")
 
-    println("Quota manteniment................."+fixedImport+" €\n")
+    println("Quota manteniment................."+fixedImport.toDouble().round(2)+" €\n")
     val total=base-discount+fixedImport
     separador()
-    println("TOTAL.........................."+total.toDouble().round(2)+" €")
+    println("TOTAL.........................."+total+" €")
     separador()
 }
 
