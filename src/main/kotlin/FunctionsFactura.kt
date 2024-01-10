@@ -8,6 +8,7 @@ fun calculateBasePrice(liters:Float):Float{
 }
 
 fun calculateDiscountNumerousFamily():Int{
+    ///TODO: hacer que la interaccion con el ususario sea en el main, o en otra funcion. Es importante pasar el valor de num personas por paramnetro!!!
     val numPeople=readIntRange("Introdueixi el num de persones de la llar", 2, 25)
     var descompte=0
     if (numPeople>6) descompte=50
