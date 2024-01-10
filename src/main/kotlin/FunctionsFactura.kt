@@ -18,7 +18,7 @@ fun calculateFinalDiscount(basePrice:Float,numerousFamily:Int, socialBonus:Int):
     var discount=0
     if (numerousFamily>socialBonus)discount=numerousFamily
     else discount=socialBonus
-    val finalDiscount=basePrice*(discount/100)
+    val finalDiscount=(discount*basePrice)/100
     return finalDiscount.toDouble().round(2)
 }
 fun printFinalBill(liters:Float,base:Float,discount:Float,socialDiscount:Boolean, fixedImport:Int){

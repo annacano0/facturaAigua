@@ -13,13 +13,13 @@ fun main() {
     val socialBonus=readStringSiNo("Té algun tipus d'abonament social? (Si/No)")
     var socialBonusDiscount=0
     if (socialBonus) socialBonusDiscount= 80
-    var socialDiscount=false
+    var socialDiscountIsBigger=false
     if (socialBonusDiscount>numerousFamilyDiscount){
-        socialDiscount=true
+        socialDiscountIsBigger=true
         fixedImport=3
     }
 
     val finalDiscount= calculateFinalDiscount(basePrice,numerousFamilyDiscount,socialBonusDiscount)
-    printFinalBill(litersWater,basePrice,finalDiscount,socialDiscount,fixedImport)
+    printFinalBill(litersWater,basePrice,finalDiscount,socialDiscountIsBigger,fixedImport)
 
 }
