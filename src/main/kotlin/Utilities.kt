@@ -284,6 +284,42 @@ fun readFloat(pMessageIn: String
 }
 
 /**
+ * This method can be used to read a Float value from the user through keyboard using java.util.Scanner and with a minimum value
+ * @author raimon.izard
+ * @author annacano0
+ * @since 15/12/2023
+ * @param pMessageIn Input message to be shown to the user
+ * @param pMin Min accepted value
+ * @return outputValue Output value
+ */
+fun readFloat(pMessageIn: String
+              , pMin: Float
+): Float{
+
+    var outputValue: Float = 0.0f
+    var correctDataType: Boolean = false
+
+    do{
+        println(pMessageIn)
+        correctDataType = scan.hasNextFloat()
+
+        if (!correctDataType){
+            messageErrorDT()
+        }else{
+            outputValue = scan.nextFloat()
+
+            if (outputValue < pMin){
+                messageErrorRange()
+                correctDataType = false
+            }
+        }
+        scan.nextLine()
+    }while(!correctDataType)
+
+    return outputValue
+}
+
+/**
  * This method can be used to read a Float value from the user through keyboard using java.util.Scanner
  * @author Thalia2603 anna.cano0
  * @since 04/01/2024
@@ -310,7 +346,6 @@ fun readFloat(): Float {
 
             // Check if the user entered 4321, and terminate the program if true
             if (outputValue == 4321.0f) {
-                messageExitProgram()
                 System.exit(0)
             }
         }
@@ -356,7 +391,6 @@ fun readStringSiNo(pMessageIn: String): Boolean {
             } else if (inputUsuari == "no") {
                 outputValue = false
             } else if (inputUsuari == "4321") {
-                messageExitProgram()
                 System.exit(0) // Finaliza la ejecución del programa
             } else {
                 messageErrorDT()

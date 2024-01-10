@@ -32,7 +32,6 @@ fun messageErrorRange(){
     println(YELLOW_BOLD+"El tipus de dada no està en les opcions, torni a intentar."+RESET)
 }
 
-fun messageExitProgram(){
-    println(RED_BOLD+"Has introduit el valor 4321"+RESET)
-    println(RED_BOLD+"FINALITZANT PROGRAMA"+RESET)
+fun separador(){
+    println("-------------------------------------")
 }
