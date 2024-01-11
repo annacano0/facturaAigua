@@ -23,8 +23,9 @@ fun main() {
         socialDiscountIsBigger=true
         fixedImport=3
     }
-
+    //get final price and print bill
     val finalDiscount= calculateFinalDiscount(basePrice,numerousFamilyDiscount,socialBonusDiscount)
-    printFinalBill(litersWater,basePrice,finalDiscount,fixedImport)
+    val total= getFinalPrice(basePrice,finalDiscount,fixedImport)
+    printFinalBill(litersWater,basePrice,finalDiscount,fixedImport,total)
     endOfProgramMessage()
 }

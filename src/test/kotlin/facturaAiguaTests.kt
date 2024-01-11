@@ -54,4 +54,31 @@ class testFunctionsFactura() {
         socialDiscount=0
         assertEquals(expected, calculateFinalDiscount(basePrice,numerousFamily,socialDiscount))
     }
+
+    @Test
+    fun checkGetFinalPrice(){
+        var expected=86f
+        var basePrice=100f
+        var discount=20f
+        var fixedImport=6
+        assertEquals(expected, getFinalPrice(basePrice,discount,fixedImport))
+
+        expected=6f
+        basePrice=0f
+        discount=0f
+        fixedImport=6
+        assertEquals(expected, getFinalPrice(basePrice,discount,fixedImport))
+
+        expected=6f
+        basePrice=0f
+        discount=0f
+        fixedImport=6
+        assertEquals(expected, getFinalPrice(basePrice,discount,fixedImport))
+
+        expected=10951f
+        basePrice=13948f
+        discount=3000f
+        fixedImport=3
+        assertEquals(expected, getFinalPrice(basePrice,discount,fixedImport))
+    }
 }

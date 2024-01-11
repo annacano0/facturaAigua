@@ -41,3 +41,20 @@ fun separador(){
     println("-------------------------------------")
 }
 
+fun printFinalBill(liters:Float,base:Float,discount:Float, fixedImport:Int, total:Float){
+    separador()
+    println("         FACTURA DE L'AIGUA          ")
+    separador()
+    println("\nConsum..................."+liters+" litres")
+    println("Preu base......................"+base.toDouble().round(2)+" €")
+    separador()
+
+    if (fixedImport==3)println("Descompte social................"+discount.toDouble().round(2)+" €")
+    else println("Descompte mp/num................"+discount.toDouble().round(2)+" €")
+
+    println("Quota manteniment................."+fixedImport.toDouble().round(2)+" €\n")
+    separador()
+    println("TOTAL.........................."+total+" €")
+    separador()
+}
+
