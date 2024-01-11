@@ -24,7 +24,6 @@ fun endOfProgramMessage(){
  * @since 04/01/2024
  */
 fun messageErrorDT(){
-    //funcion que es llamada cuando el tipo de dato es incorrecto
     println(RED_BOLD+"El tipus de dada és incorrecte, torni a intentar."+RESET)
 }
 /**
@@ -33,14 +32,29 @@ fun messageErrorDT(){
  * @since 04/01/2024
  */
 fun messageErrorRange(){
-    //funcion que es llamada cuando el tipo de dato esta fuera del rango establecido
     println(YELLOW_BOLD+"El tipus de dada no està en les opcions, torni a intentar."+RESET)
 }
 
+/**
+ *This function prints text separator
+ * @author annacano0
+ * @since 11/01/2024
+ */
 fun separador(){
     println("-------------------------------------")
 }
 
+/**
+ /*This function prints the final bill with the concepts separated in bill format and with rounded values.
+ If User has social bonus, it also changes the message*/
+ * @author annacano0
+ * @since 11/01/2024
+ * @param liters consumption of liters by user
+ * @param base base price calculated from liters
+ * @param discount discount applied
+ * @param fixedImport fixed quote of maintenance
+ * @param total total sum to pay
+ */
 fun printFinalBill(liters:Float,base:Float,discount:Float, fixedImport:Int, total:Float){
     separador()
     println("         FACTURA DE L'AIGUA          ")
@@ -48,13 +62,13 @@ fun printFinalBill(liters:Float,base:Float,discount:Float, fixedImport:Int, tota
     println("\nConsum..................."+liters+" litres")
     println("Preu base......................"+base.toDouble().round(2)+" €")
     separador()
-
+    //with the fixed quote we can know if social bonus has been applied and change message on bill
     if (fixedImport==3)println("Descompte social................"+discount.toDouble().round(2)+" €")
     else println("Descompte mp/num................"+discount.toDouble().round(2)+" €")
 
     println("Quota manteniment................."+fixedImport.toDouble().round(2)+" €\n")
     separador()
-    println("TOTAL.........................."+total+" €")
+    println("TOTAL.........................."+total.toDouble().round(2)+" €")
     separador()
 }
 

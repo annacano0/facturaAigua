@@ -325,13 +325,6 @@ fun readFloat(pMessageIn: String
  * @since 04/01/2024
  * @return outputValue Output value
  */
-/**
- * This method can be used to read a Float value from the user through keyboard using java.util.Scanner
- * If the user enters 4321, the program execution will terminate.
- * @author Thalia2603, annacano0
- * @since 04/01/2024
- * @return outputValue Output value
- */
 fun readFloat(): Float {
     var outputValue: Float = 0.0f
     var correctDataType: Boolean = false
@@ -343,11 +336,6 @@ fun readFloat(): Float {
             messageErrorDT()
         } else {
             outputValue = scan.nextFloat()
-
-            // Check if the user entered 4321, and terminate the program if true
-            if (outputValue == 4321.0f) {
-                System.exit(0)
-            }
         }
         scan.nextLine()
     } while (!correctDataType)
@@ -390,8 +378,6 @@ fun readStringSiNo(pMessageIn: String): Boolean {
                 outputValue = true
             } else if (inputUsuari == "no") {
                 outputValue = false
-            } else if (inputUsuari == "4321") {
-                System.exit(0) // Finaliza la ejecución del programa
             } else {
                 messageErrorDT()
                 inputCorrecte = false
