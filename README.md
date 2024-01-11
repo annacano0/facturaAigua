@@ -1,5 +1,6 @@
 # Factura de l'Aigua 💧
-![headerImg](IMG_README/Captura de pantalla 2024-01-11 190942.png)
+![headerImg](IMG_README/Captura%20de%20pantalla%202024-01-11%20190942.png)
+
 Aquest és un programa que calcula la teva factura de l'aigua, partint del consum d'aigua de l'usuari i aplicant descomptes socials, taxa de manteniment, etc... Finalment es rep una factura desglossada.
 
 ## Índex
@@ -39,10 +40,11 @@ En entrar al programa, salta un missatge de benvinguda, i es pregunta a l'usuari
 
 ## Funcions de càlcul 🤠
 
-#### 'calculateBasePrice()'
-#### 'calculateDiscountNumerousFamily()'
-#### 'calculateFinalDiscount()'
-#### 'calculateFinalPrice()'
+### `calculateBasePrice()`
+### `calculateDiscountNumerousFamily(`
+### `calculateFinalDiscount()`
+### `calculateFinalPrice()`
+
 
 - Autora:Anna Cano
 - Data: 11/01/24
